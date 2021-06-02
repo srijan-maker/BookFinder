@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.html{
+    /* 62.5%=>10px */
+    font-size: 10px;
+}
+
+/*==========================Variable Declaration==========================  */
+:root{
+    --color-primary: #2184d0;
+    --color-secondary: #00d9ff;
+    --color-accent: #ff3400;
+    --color-headings: #1b0760;
+    --color-body: rgb(255, 255, 255);
+    --color-body-darker: #635c80;
+    --color--text-dark:#37384e;
+    --color-shadow: rgb(255, 255, 255);
+
+}
+.bg{
+    background-image: url("../images/back.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    color: white;
+    background:rgba(0,0,0,0.5);
+
+}
+
+/* ===============Title=============== */
+
+.heading{
+    margin-bottom: 0;
+    /* font-size: medium; */
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.title{
+    font-weight: 500;
+    color: rgb(53, 168, 245);
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+
+
+/* ===============Input Field=============== */
+.search-engine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    margin-top: 5rem;
+    height: 2rem;
+    width: 70vw;
+    padding-left: 1rem;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 20px;
+
+}
+
+/* ===============Button=============== */
+.search{
+    display: flex;
+    align-items: center;
+    height:2rem;
+    background: var(--color-primary);
+    color: white;
+    padding-right: 0.7rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+.search>img{
+    height: 1.5rem;
+}
+
+/*  ===============Opening Page for Mobile =============== */
+
+
+/*  ===============Book List =============== */
+/* .book-list{ */
+    /* visibility:hidden; */
+/* } */
+
+/* ===============List Head=============== */
+.list-head{
+    /* border: 5px solid black; */
+    text-align: center;
+    padding-top: 5rem ;
+    font-size: 50px;
+    margin-bottom: 5rem;
+    font-weight: 600;
+    font-style: oblique;
+}
+
+/* ==============Each Book================ */
+.book-container{
+    margin-left: 2rem;
+    /* border: 2px solid black; */
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    font-family: 'Courgette', cursive;
+    width: 35rem;
+    height: fit-content;
+    box-shadow: 0 0 60px rgb(207, 207, 207);
+    margin:4rem;
+}
+.book-container:hover{
+    box-shadow: 0 0 60px gray;
+    transition: 0.7s;
+
+}
+.book-doc{
+    padding: 0.5rem;
+    line-height: 2rem;
+    
+}
+.book-doc>p{
+    color: var(--color-body-darker);
+    font-size: 1.2rem;
+}
+.book-doc .book--name{
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color--text-dark);
+
+}
+.book--read{
+    /* border: 1px solid black; */
+    display: inline-block;
+    margin-left: 3rem;
+    margin-top: 0.6rem;
+    height: 2rem;
+    width: 7rem;
+
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: var(--color-body-darker);
+    border-radius: 2rem;
+    box-shadow: 0 0 0.3rem var(--color-body-darker);
+
+}
+.book--read:hover{
+    /* height: 2.5rem;
+    width: 7.5rem;
+    text-align: center;
+    padding-top:0.2rem;
+    font-size: 1.1rem;
+    font-weight: 400; */
+    box-shadow: 0 0 1rem var(--color-body-darker);
+    transition: 0.5s;
+}
+
+/* ==============Each Book Type Writing================ */
+.book--author::before{
+    content: "Author : ";
+}
+.book--publisher::before{
+    content: "Publisher : ";
+}
+.book--category::before{
+    content: "Catagory : ";
+}
+::before{
+    color: var(--color--body-dark);
+    font-weight: 600;
+}
+
+/* =================All Books============= */
+#yota{
+    display:  flex;
+    flex-wrap: wrap;    
+}
+
+/* =================Header================ */
+.header{
+    transition: 0.5s;
+    width: 100vw;
+    height: 7rem;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 0 30px gray;
+    
+    
+}
+.header .des{
+    visibility:hidden;
+    height: 0rem;
+    width: 0rem;
+}
+.header .input{
+    margin-top: 0rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+}
+.header .search>p{
+    visibility: hidden;
+    height: 0rem;
+    width: 0rem;
+}
+.header .search{
+    background-color:transparent;
+    margin-top: 0rem;
+
+}
+.header .search>img{
+    height: 3rem;
+}
+.header .search-engine{
+    flex-direction: row;
+    justify-content: center;
+}
+/* ==============================Mobile======================== */
+@media screen and (max-width: 480px) {
+    .heading{
+        font-size: 4rem;
+    }
+    .title{
+        font-size: 8rem;
+        text-shadow: 0 0 80px black;
+    }
+    .input{
+        height: 6rem;
+        border-radius: 1rem;
+        font-size: 3rem;
+        padding-left: 2rem;
+    }
+    .search{
+        height: 5rem;
+        font-size: 3rem;
+        padding-right: 2rem;
+        border-radius: 1rem;
+    }
+    .search>img{
+        height: 5rem;
+    }
+
+    .header{
+        height: 10rem;
+        width: 100vw;
+    }
+    .bg{
+        border:3px solid black;
+        width: 100vw;
+    }
+    .header .input{
+        height: 3rem;
+    }
+    .book-container{
+        width: 95vw;
+    }
+    .book-image{
+        height: 30rem;
+    }
+    .book-doc{
+        line-height: 3.5rem;
+    }
+    .book--name{
+        font-size:3rem
+    }
+    .book-doc>p{
+        font-size: 2.4rem;
+    }
+    .book--read{
+        margin-top: 1rem;
+        height: 5rem;
+        font-size: 3rem;
+        width: 18rem;
+        padding-top: 0.7rem;
+        box-shadow: 0 0 0.7rem var(--color-body-darker);
+    }
+    .list-head{
+        font-size: 5rem;
+        text-shadow: 0 0 60px var(--color-shadow);
+    }
+}
